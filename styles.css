@@ -111,3 +111,86 @@ body::before {
     background: linear-gradient(to left, #693A00 0%, #B87B33 50%, #EDD2B4 100%);        /* Los % no funcionan como en Figma, aqui no representan que % de color quieres, sino en que % de la pantalla los aplicas */
     z-index: -1;        /* Capa inferior para no solapar a nadie */
 }
+
+   /* ----SERVICES---- */
+/* Sección General */
+#services {
+    background-color: var(--color-text-secondary);
+    padding: var(--spacing-md) var(--spacing-md);
+    color: var(--color-text-primary);
+}
+.p-border-page:last-of-type {
+    margin-bottom: 0; /* Eliminamos el margen que viene de serie */
+}
+/* Título superior centrado */
+.p-border-page {
+    display: flex;
+    align-items: center;    /* Centra verticalmente las líneas con el texto */
+    text-align: center;
+    width: 100%;
+    
+    /* Espaciado del marco respecto a los bordes de la pantalla y el contenido de abajo */
+    padding: 0 var(--spacing-md); 
+    margin-top: 0;          /* Pegado arriba del todo */
+    margin-bottom: var(--spacing-xl);
+    
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.p-border-page::before,
+.p-border-page::after {
+    content: "";
+    flex: 1;                /* Esto hace que las líneas ocupen todo el espacio disponible */
+    height: 2px;            /* Grosor de la línea */
+    background-color: var(--color-text-primary); /* Mismo color que el texto */
+}
+
+
+/* Espacio entre las líneas y el texto */
+.p-border-page::before {
+    margin-right: var(--spacing-sm);
+}
+
+.p-border-page::after {
+    margin-left: var(--spacing-sm);
+}
+
+/* Intro de la sección */
+.services-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.h2-services {
+    font-size: var(--size-font-2xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Tarjetas de Servicio (Mobile First: una columna) */
+.service-card {
+    display: flex;
+    flex-direction: column; /* H3 -> IMG -> P */
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.h3-services {
+    font-size: var(--size-font-lg);
+    font-family: var(--font-header);
+}
+
+.service-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Para que no ocupen toda la pantalla en alto */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* El párrafo del servicio */
+.service-card p {
+    line-height: 1.5;
+}
