@@ -112,6 +112,77 @@ body::before {
     z-index: -1;        /* Capa inferior para no solapar a nadie */
 }
 
+  /* ----HEADER---- */ 
+
+  .header {
+    position: fixed;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: var(--spacing-sm);
+  }
+  
+  .nav__logo {
+    height: 40px;
+    text-decoration: none;
+    color: var(--color-brand);
+    -webkit-text-stroke: 1px #C49A6A;
+    font-weight: 800;
+    font-size: var(--spacing-md);
+  }
+  
+  .nav__toggle {
+    background: none;
+    border: none;
+    font-size: var(--size-font-3xl);
+    cursor: pointer;
+    color: var(--color-brand-border);
+    margin: 1px;
+    background-color: #e0c6a1;
+    border-radius: 3px;
+  }
+  
+  .nav__menu {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: #D6b388;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .nav__menu--show {
+    display: flex;
+  }
+  
+  .nav__link {
+    color: var(--color-text-primay);
+    font-size: var(--size-font-lg);
+    text-decoration: none;
+  }
+  
+  .second-nav__link {
+    color: var(--color-brand-button);
+    font-size: var(--size-font-lg);
+    text-decoration: none;
+  }
+  
+  .nav__link:hover,
+  .second-nav__link:hover {
+    color: var(--color-brand);
+  }
+  
+
    /* ----SERVICES---- */
 /* Sección General */
 #services {
