@@ -84,7 +84,7 @@
 
   /* ----COLORS---- */
 
-  --color-text-primay: #662600;
+  --color-text-primary: #662600;
   --color-text-secondary: #fffada;
 
   --color-brand: #7a5b30;
@@ -174,58 +174,10 @@ body::before {
 }
 
 .nav__link {
-  color: var(--color-text-primay);
+  color: var(--color-text-primary);
   font-size: var(--size-font-lg);
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .second-nav__link {
   color: var(--color-brand-button);
