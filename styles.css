@@ -182,7 +182,52 @@ body::before {
   .second-nav__link:hover {
     color: var(--color-brand);
   }
-  
+/* ----HERO---- */ 
+  .hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-block: var(--spacing-2xl);
+    background-image: url("/assets/img/coffee.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero_content{
+    max-width: 400px;
+  }
+
+  .hero_title{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto var(--spacing-3xl);
+    display: block;
+  }
+
+  .hero_title text{
+    font-size: 55px;
+    font-family: var(--font-h1-hero);
+    letter-spacing: var(--size-font-sm);
+    fill: var(--color-text-primay); /*color del texto*/
+    stroke: var(--webkit-text-stroke); /*contorno del texto*/
+    stroke-width: 2px; /*grosor del contorno*/
+  }
+  .hero_subtitle {
+    font-family: var(--font-h1-hero), serif; /* o una serif elegante */
+    font-size: var(--size-font-lg);
+    font-weight: 600;              /* más fino */
+    letter-spacing: 0.1rem;       /* más aire entre letras */
+    color: #735A4B;   
+    -webkit-text-stroke: 1px #989898; /* tono café suave */
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  /*0px de desplazamiento horizontal → no se mueve a los lados.
+    2px de desplazamiento vertical → da un toque de profundidad.
+    6px de blur → suavidad, sin bordes duros.
+    rgba(0,0,0,0.15) → sombra cálida, muy ligera, no negra.*/
 
    /* ----SERVICES---- */
 /* Sección General */
