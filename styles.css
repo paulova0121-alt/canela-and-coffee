@@ -380,3 +380,71 @@ body::before {
 .service-card p {
     line-height: 1.5;
 }
+
+/*----TEAM-CARDS----*/
+.cards_team {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 12px;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-size: 0.9em;
+  line-height: 1.4;
+  max-height: 400px;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.somos {
+  font-size: 1.5em;
+  text-align: center;
+}
+.name {
+  margin: 0 0 1px 0;
+  font-size: 1.3em;
+}
+.info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 0, 85em;
+}
+
+.icon, .icon_two {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  margin: 0 auto 15px auto;
+  display: flex;
+}
+ .icon_two {
+  height:  210px;  
+  width: 210px;  
+  margin: 0 auto 20px auto; 
+  margin-top: -40px;
+  margin-bottom: -10px;
+
+}
+.cards_team div {
+  width: 200px;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #633800;
+  border-radius: 12px;
+  list-style-position: inside;
+  flex: 0 1 280px;
+}
+.card_pau {
+  background-color: rgba(220, 189, 150, 0.405);
+}
+.card_kar {
+  background-color: #9f4b325e;
+}
+.card_rub {
+  background-color: rgba(82, 35, 2, 0.37);
+}
+.card_cyn {
+  background-color: #9c5c125b;
+}
