@@ -26,6 +26,30 @@
         </nav>
       </header>
       
+      <section class="hero">
+        <div class="hero_content">
+      
+          <svg class="hero_title" viewBox="0 0 500 200">
+             <!-- PATH = la curva que define el arco del texto.
+              M 50 200  → punto inicial (x=50, y=200)
+              Q 250 -120 → punto de control (cuanto más arriba, más curvado)
+              450 200 → punto final (x=450, y=200)
+              fill="transparent" → no pinta nada, solo sirve de guía para el texto-->
+            <!-- Curva del arco -->
+            <path id="curve" d="M 50 200 Q 250 -120 450 200" fill="transparent"/>
+            <!--TEXT = contenedor del texto dentro del SVG.
+            width="500" → ancho del área donde se distribuye el texto-->
+            <text width="500">
+                <!-- TEXTPATH = hace que el texto siga la curva del <path>
+                href="#curve" → enlaza con el path de arriba.
+                startOffset="50%" → centra el texto en la curva.
+                text-anchor="middle" → alinea el texto respecto al centro.-->
+              <textPath href="#curve" startOffset="50%" text-anchor="middle">
+                Canela&Coffee
+              </textPath>
+            </text>
+          </svg>
+
   <section id="services">
     <p class="p-border-page">Servicios</p>
     
