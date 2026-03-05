@@ -265,3 +265,69 @@ body::before {
 .service-card p {
     line-height: 1.5;
 }
+
+/*----TEAM-CARDS----*/
+.cards_team {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: bisque;
+  border-radius: 12px;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-size: 0, 9em;
+  line-height: 1.4;
+  height: 400px;
+}
+.somos {
+  font-size: 1.5em;
+  text-align: center;
+}
+.name {
+  margin: 0 0 1px 0;
+  font-size: 1.3em;
+}
+.info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 0, 85em;
+}
+
+.icon {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  margin: 0 auto 15px auto;
+  display: block;
+}
+.icon_two {
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  margin-left: -80px;
+  margin-top: -30px;
+}
+.cards_team div {
+  width: 280px;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #633800;
+  border-radius: 12px;
+  list-style-position: inside;
+}
+.card_pau {
+  background-color: rgb(220, 188, 150);
+}
+.card_kar {
+  background-color: var(--color-brand-border);
+}
+.card_rub {
+  background-color: var(--color-brand);
+}
+.card_cyn {
+  background-color: #a96239;
+}
+
+
