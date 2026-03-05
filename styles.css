@@ -272,7 +272,6 @@ body::before {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: bisque;
   border-radius: 12px;
   margin-left: 3%;
   margin-right: 3%;
@@ -322,13 +321,14 @@ body::before {
   background-color: rgb(220, 188, 150);
 }
 .card_kar {
-  background-color: var(--color-brand-border);
+  background-color: var(--color-brand-border) transparent;
+
 }
 .card_rub {
   background-color: var(--color-brand);
 }
 .card_cyn {
-  background-color: #a96239;
+  background-color: #a96239 ;
 }
 
 
