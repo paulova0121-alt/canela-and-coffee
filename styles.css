@@ -167,7 +167,7 @@ body::before {
   }
   
   .nav__link {
-    color: var(--color-text-primay);
+    color: var(--color-text-primary);
     font-size: var(--size-font-lg);
     text-decoration: none;
   }
@@ -209,7 +209,7 @@ body::before {
     font-size: 55px;
     font-family: var(--font-h1-hero);
     letter-spacing: var(--size-font-sm);
-    fill: var(--color-text-primay); /*color del texto*/
+    fill: var(--color-text-primary); /*color del texto*/
     stroke: var(--webkit-text-stroke); /*contorno del texto*/
     stroke-width: 2px; /*grosor del contorno*/
   }
