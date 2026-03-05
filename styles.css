@@ -303,19 +303,20 @@ body::before {
   font-size: 0, 85em;
 }
 
-.icon {
+.icon, .icon_two {
   height: 150px;
   width: 150px;
   object-fit: cover;
   margin: 0 auto 15px auto;
-  display: block;
+  display: flex;
 }
-.icon_two {
-  height: 190px;
-  object-fit: cover;
-  display: block;
-  margin-left: -80px;
-  margin-top: -30px;
+ .icon_two {
+  height:  210px;  
+  width: 210px;  
+  margin: 0 auto 20px auto; 
+  margin-top: -40px;
+  margin-bottom: -10px;
+
 }
 .cards_team div {
   width: 200px;
