@@ -1,270 +1,275 @@
-*, *::before, *::after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* DM Sans */
 @font-face {
-  font-family: 'DM Sans';
-  src: url('../assets/fonts/DM_Sans/DMSans-Regular.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DM_Sans/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('../assets/fonts/DM_Sans/DMSans-Bold.ttf') format('truetype');
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DM_Sans/DMSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 /* Jacques Francois */
 @font-face {
-  font-family: 'Jacques Francois';
-  src: url('../assets/fonts/Jacques_Francois/JacquesFrancois-Regular.ttf') format('truetype');
+  font-family: "Jacques Francois";
+  src: url("../assets/fonts/Jacques_Francois/JacquesFrancois-Regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 /* Montserrat */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/Montserrat-Regular.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../assets/fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/Montserrat-SemiBold.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
-:root{
+:root {
+  /* ----FONTS---- */
+  --font-base: "Monstserrat", sans-serif; /* Fonts para la página general */
+  --font-header: "DM Sans", sans-serif; /* Fuente para los headers */
+  --font-h1-hero: "JacquesFrancois", serif; /* Fuente para h1 hero  */
 
-    /* ----FONTS---- */
-    --font-base: 'Monstserrat', sans-serif;     /* Fonts para la página general */
-    --font-header: 'DM Sans', sans-serif;       /* Fuente para los headers */
-    --font-h1-hero: 'JacquesFrancois', serif;   /* Fuente para h1 hero  */  
+  /* ----SIZE FONT---- */
+  --size-font-3xs: 0.625rem; /* 10px */
+  --size-font-2xs: 0.75rem; /* 12px */
+  --size-font-xs: 0.875rem; /* 14px */
+  --size-font-sm: 1rem; /* 16px */
+  --size-font-md: 1.125rem; /* 18px */
+  --size-font-lg: 1.25rem; /* 20px */
+  --size-font-xl: 1.5rem; /* 24px */
+  --size-font-2xl: 1.75rem; /* 28px */
+  --size-font-3xl: 2rem; /* 32px */
 
-    /* ----SIZE FONT---- */
-    --size-font-3xs: 0.625rem;  /* 10px */
-    --size-font-2xs: 0.75rem;   /* 12px */
-    --size-font-xs: 0.875rem;   /* 14px */
-    --size-font-sm: 1rem;       /* 16px */
-    --size-font-md: 1.125rem;   /* 18px */
-    --size-font-lg: 1.25rem;    /* 20px */
-    --size-font-xl: 1.5rem;     /* 24px */
-    --size-font-2xl: 1.75rem;   /* 28px */
-    --size-font-3xl: 2rem;      /* 32px */
+  /* ----WEIGHT FONT---- */
 
-    /* ----WEIGHT FONT---- */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
+  /* ----SPACING---- */
 
-    /* ----SPACING---- */
+  --spacing-3xs: 0.25rem; /* 4px  */
+  --spacing-2xs: 0.5rem; /* 8px  */
+  --spacing-xs: 0.75rem; /* 12px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 3rem; /* 48px */
+  --spacing-2xl: 4rem; /* 64px */
+  --spacing-3xl: 6rem; /* 96px */
 
-    --spacing-3xs: 0.25rem;   /* 4px  */
-    --spacing-2xs: 0.5rem;    /* 8px  */
-    --spacing-xs: 0.75rem;    /* 12px */
-    --spacing-sm: 1rem;       /* 16px */
-    --spacing-md: 1.5rem;     /* 24px */
-    --spacing-lg: 2rem;       /* 32px */
-    --spacing-xl: 3rem;       /* 48px */
-    --spacing-2xl: 4rem;      /* 64px */
-    --spacing-3xl: 6rem;      /* 96px */
+  /* ----COLORS---- */
 
-    /* ----COLORS---- */
+  --color-text-primay: #662600;
+  --color-text-secondary: #fffada;
 
-    --color-text-primay: #662600;
-    --color-text-secondary: #FFFADA;
+  --color-brand: #7a5b30;
+  --color-brand-border: #c49a6a;
+  --color-brand-button: #f5f5f5;
 
-    --color-brand: #7A5B30;
-    --color-brand-border: #C49A6A;
-    --color-brand-button: #f5f5f5;
+  /* ----STROKE---- */
+  --webkit-text-stroke: #c49a6a;
 
-    /* ----STROKE---- */
-    --webkit-text-stroke: #C49A6A;
-
-    /* ----Info de background: GRADIENT---- 
+  /* ----Info de background: GRADIENT---- 
      3 colores:  color 1: #693A00; - 92%
                 color 2: #B87B33; - 85%
                 color 3: #EDD2B4; - 100%
     */
-
 }
 
 body {
-    font-family: var(--font-base);
-    font-weight: 400;
+  font-family: var(--font-base);
+  font-weight: 400;
 }
-
 
 body::before {
-    content: "";
-    position: fixed;        /* No se mueve al hacer scroll, cubre toda la pantalla siempre */
-    inset: 0;               /* Mecanismo para que se pegue a todos los bordes del contenedor */
-    background: linear-gradient(to left, #693A00 0%, #B87B33 50%, #EDD2B4 100%);        /* Los % no funcionan como en Figma, aqui no representan que % de color quieres, sino en que % de la pantalla los aplicas */
-    z-index: -1;        /* Capa inferior para no solapar a nadie */
+  content: "";
+  position: fixed; /* No se mueve al hacer scroll, cubre toda la pantalla siempre */
+  inset: 0; /* Mecanismo para que se pegue a todos los bordes del contenedor */
+  background: linear-gradient(
+    to left,
+    #693a00 0%,
+    #b87b33 50%,
+    #edd2b4 100%
+  ); /* Los % no funcionan como en Figma, aqui no representan que % de color quieres, sino en que % de la pantalla los aplicas */
+  z-index: -1; /* Capa inferior para no solapar a nadie */
 }
 
-  /* ----HEADER---- */ 
+/* ----HEADER---- */
 
-  .header {
-    position: fixed;
-    margin-top: 0;
-    margin-left: 0;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: var(--spacing-sm);
-  }
-  
-  .nav__logo {
-    height: 40px;
-    text-decoration: none;
-    color: var(--color-brand);
-    -webkit-text-stroke: 1px var(--webkit-text-stroke);
-    font-weight: 800;
-    font-size: var(--spacing-md);
-  }
-  
-  .nav__toggle {
-    background: none;
-    border: none;
-    font-size: var(--size-font-3xl);
-    cursor: pointer;
-    color: var(--color-brand-border);
-    margin: 1px;
-    background-color: #e0c6a1;
-    border-radius: 3px;
+.header {
+  position: fixed;
+  margin-top: 0;
+  margin-left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--spacing-sm);
+}
+
+.nav__logo {
+  height: 40px;
+  text-decoration: none;
+  color: var(--color-brand);
+  -webkit-text-stroke: 1px var(--webkit-text-stroke);
+  font-weight: 800;
+  font-size: var(--spacing-md);
+}
+
+.nav__toggle {
+  background: none;
+  border: none;
+  font-size: var(--size-font-3xl);
+  cursor: pointer;
+  color: var(--color-brand-border);
+  margin: 1px;
+  background-color: #e0c6a1;
+  border-radius: 3px;
 }
 
 .nav__menu {
-    display: none;
-    flex-direction: column;
-    background: var(--color-brand-border);
-    position: absolute;
-    top: 100%;
-    right: 1rem;
-    padding: 1rem 1.5rem;
-    gap: 0.75rem;
-    border: solid 2px var(--color-brand-border);
-    border-radius: 8px;
-  }
-  
-  .nav__menu--show {
-    display: flex;
-  }
-  
-  .nav__link {
-    color: var(--color-text-primay);
-    font-size: var(--size-font-lg);
-    text-decoration: none;
-  }
-  
-  .second-nav__link {
-    color: var(--color-brand-button);
-    font-size: var(--size-font-lg);
-    text-decoration: none;
-  }
-  
-  .nav__link:hover,
-  .second-nav__link:hover {
-    color: var(--color-brand);
-  }
-  
+  display: none;
+  flex-direction: column;
+  background: var(--color-brand-border);
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  padding: 1rem 1.5rem;
+  gap: 0.75rem;
+  border: solid 2px var(--color-brand-border);
+  border-radius: 8px;
+}
 
-   /* ----SERVICES---- */
+.nav__menu--show {
+  display: flex;
+}
+
+.nav__link {
+  color: var(--color-text-primay);
+  font-size: var(--size-font-lg);
+  text-decoration: none;
+}
+
+.second-nav__link {
+  color: var(--color-brand-button);
+  font-size: var(--size-font-lg);
+  text-decoration: none;
+}
+
+.nav__link:hover,
+.second-nav__link:hover {
+  color: var(--color-brand);
+}
+
+/* ----SERVICES---- */
 /* Sección General */
 #services {
-    background-color: var(--color-text-secondary);
-    padding: var(--spacing-md) var(--spacing-md);
-    color: var(--color-text-primary);
+  background-color: var(--color-text-secondary);
+  padding: var(--spacing-md) var(--spacing-md);
+  color: var(--color-text-primary);
 }
 .p-border-page:last-of-type {
-    margin-bottom: 0; /* Eliminamos el margen que viene de serie */
+  margin-bottom: 0; /* Eliminamos el margen que viene de serie */
 }
 /* Título superior centrado */
 .p-border-page {
-    display: flex;
-    align-items: center;    /* Centra verticalmente las líneas con el texto */
-    text-align: center;
-    width: 100%;
-    
-    /* Espaciado del marco respecto a los bordes de la pantalla y el contenido de abajo */
-    padding: 0 var(--spacing-md); 
-    margin-top: 0;          /* Pegado arriba del todo */
-    margin-bottom: var(--spacing-xl);
-    
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  display: flex;
+  align-items: center; /* Centra verticalmente las líneas con el texto */
+  text-align: center;
+  width: 100%;
+
+  /* Espaciado del marco respecto a los bordes de la pantalla y el contenido de abajo */
+  padding: 0 var(--spacing-md);
+  margin-top: 0; /* Pegado arriba del todo */
+  margin-bottom: var(--spacing-xl);
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .p-border-page::before,
 .p-border-page::after {
-    content: "";
-    flex: 1;                /* Esto hace que las líneas ocupen todo el espacio disponible */
-    height: 2px;            /* Grosor de la línea */
-    background-color: var(--color-text-primary); /* Mismo color que el texto */
+  content: "";
+  flex: 1; /* Esto hace que las líneas ocupen todo el espacio disponible */
+  height: 2px; /* Grosor de la línea */
+  background-color: var(--color-text-primary); /* Mismo color que el texto */
 }
-
 
 /* Espacio entre las líneas y el texto */
 .p-border-page::before {
-    margin-right: var(--spacing-sm);
+  margin-right: var(--spacing-sm);
 }
 
 .p-border-page::after {
-    margin-left: var(--spacing-sm);
+  margin-left: var(--spacing-sm);
 }
 
 /* Intro de la sección */
 .services-intro {
-    text-align: center;
-    margin-bottom: var(--spacing-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
 }
 
 .h2-services {
-    font-size: var(--size-font-2xl);
-    margin-bottom: var(--spacing-xs);
+  font-size: var(--size-font-2xl);
+  margin-bottom: var(--spacing-xs);
 }
 
 /* Tarjetas de Servicio (Mobile First: una columna) */
 .service-card {
-    display: flex;
-    flex-direction: column; /* H3 -> IMG -> P */
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column; /* H3 -> IMG -> P */
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .h3-services {
-    font-size: var(--size-font-lg);
-    font-family: var(--font-header);
+  font-size: var(--size-font-lg);
+  font-family: var(--font-header);
 }
 
 .service-img {
-    width: 100%;
-    height: auto;
-    max-height: 300px; /* Para que no ocupen toda la pantalla en alto */
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Para que no ocupen toda la pantalla en alto */
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* El párrafo del servicio */
 .service-card p {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 /*----TEAM-CARDS----*/
@@ -272,13 +277,15 @@ body::before {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: bisque;
   border-radius: 12px;
   margin-left: 3%;
   margin-right: 3%;
-  font-size: 0, 9em;
+  font-size: 0.9em;
   line-height: 1.4;
-  height: 400px;
+  max-height: 400px;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 .somos {
   font-size: 1.5em;
@@ -311,22 +318,23 @@ body::before {
   margin-top: -30px;
 }
 .cards_team div {
-  width: 280px;
+  width: 200px;
   max-width: 100%;
   padding: 10px;
   border: 1px solid #633800;
   border-radius: 12px;
   list-style-position: inside;
+  flex: 0 1 280px;
 }
 .card_pau {
-  background-color: rgb(220, 188, 150);
+  background-color: rgba(220, 189, 150, 0.405);
 }
 .card_kar {
-  background-color: var(--color-brand-border);
+  background-color: #9f4b325e;
 }
 .card_rub {
-  background-color: var(--color-brand);
+  background-color: rgba(82, 35, 2, 0.37);
 }
 .card_cyn {
-  background-color: #a96239;
+  background-color: #9c5c125b;
 }
