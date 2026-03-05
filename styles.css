@@ -133,7 +133,7 @@ body::before {
     height: 40px;
     text-decoration: none;
     color: var(--color-brand);
-    -webkit-text-stroke: 1px #C49A6A;
+    -webkit-text-stroke: 1px var(--webkit-text-stroke);
     font-weight: 800;
     font-size: var(--spacing-md);
   }
@@ -155,7 +155,7 @@ body::before {
     background: var(--color-brand-border);
     position: absolute;
     top: 100%;
-    right: 0.5rem;
+    right: 1rem;
     padding: 1rem 1.5rem;
     gap: 0.75rem;
     border: solid 2px var(--color-brand-border);
