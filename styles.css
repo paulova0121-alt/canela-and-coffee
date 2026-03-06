@@ -1,0 +1,594 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* DM Sans */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Jacques Francois */
+@font-face {
+  font-family: 'Jacques Francois';
+  src: url('../assets/fonts/Jacques_Francois/JacquesFrancois-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Montserrat */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root{
+
+    /* ----FONTS---- */
+    --font-base: 'Monstserrat', sans-serif;     /* Fonts para la página general */
+    --font-header: 'DM Sans', sans-serif;       /* Fuente para los headers */
+    --font-h1-hero: 'JacquesFrancois', serif;   /* Fuente para h1 hero  */  
+
+    /* ----SIZE FONT---- */
+    --size-font-3xs: 0.625rem;  /* 10px */
+    --size-font-2xs: 0.75rem;   /* 12px */
+    --size-font-xs: 0.875rem;   /* 14px */
+    --size-font-sm: 1rem;       /* 16px */
+    --size-font-md: 1.125rem;   /* 18px */
+    --size-font-lg: 1.25rem;    /* 20px */
+    --size-font-xl: 1.5rem;     /* 24px */
+    --size-font-2xl: 1.75rem;   /* 28px */
+    --size-font-3xl: 2rem;      /* 32px */
+
+    /* ----WEIGHT FONT---- */
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* ----SPACING---- */
+
+    --spacing-3xs: 0.25rem;   /* 4px  */
+    --spacing-2xs: 0.5rem;    /* 8px  */
+    --spacing-xs: 0.75rem;    /* 12px */
+    --spacing-sm: 1rem;       /* 16px */
+    --spacing-md: 1.5rem;     /* 24px */
+    --spacing-lg: 2rem;       /* 32px */
+    --spacing-xl: 3rem;       /* 48px */
+    --spacing-2xl: 4rem;      /* 64px */
+    --spacing-3xl: 6rem;      /* 96px */
+
+    /* ----COLORS---- */
+
+    --color-text-primary: #662600;
+    --color-text-secondary: #FFFADA;
+
+    --color-brand: #7A5B30;
+    --color-brand-border: #C49A6A;
+    --color-brand-button: #f5f5f5;
+
+    /* ----STROKE---- */
+    --webkit-text-stroke: #C49A6A;
+
+    /* ----Info de background: GRADIENT---- 
+     3 colores:  color 1: #693A00; - 92%
+                color 2: #B87B33; - 85%
+                color 3: #EDD2B4; - 100%
+    */
+
+}
+
+body {
+    font-family: var(--font-base);
+    font-weight: 400;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;        /* No se mueve al hacer scroll, cubre toda la pantalla siempre */
+    inset: 0;               /* Mecanismo para que se pegue a todos los bordes del contenedor */
+    background: linear-gradient(to left, #693A00 0%, #B87B33 50%, #EDD2B4 100%);        /* Los % no funcionan como en Figma, aqui no representan que % de color quieres, sino en que % de la pantalla los aplicas */
+    z-index: -1;        /* Capa inferior para no solapar a nadie */
+}
+
+  /* ----HEADER---- */
+.header {
+  position: fixed;
+  top: 0; /* Cambiado de margin-top a top para position: fixed */
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff; /* Asegúrate de tener un fondo para que no sea transparente */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--spacing-sm);
+  height: 60px; /* Altura recomendada para consistencia */
+}
+
+.nav__logo {
+  text-decoration: none;
+  color: var(--color-brand);
+  -webkit-text-stroke: 1px var(--webkit-text-stroke);
+  font-weight: 800;
+  font-size: var(--spacing-md);
+}
+
+.nav__toggle {
+  background-color: #e0c6a1;
+  border: none;
+  font-size: var(--size-font-3xl);
+  cursor: pointer;
+  color: var(--color-brand-border);
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+.nav__menu {
+  display: none;
+  flex-direction: column;
+  background: var(--color-brand-border); /* Color oscuro de fondo */
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  padding: 1rem 1.5rem;
+  gap: 0.75rem;
+  border: solid 2px var(--color-brand-border);
+  border-radius: 8px;
+}
+
+.nav__menu--show {
+  display: flex;
+}
+
+/* --- ESTILOS DE ENLACES Y HOVERS --- */
+
+/* 1. Enlaces "Claros" (Generalmente fuera del menú o con texto oscuro) */
+.nav__link {
+  color: var(--color-text-primary);
+  font-size: var(--size-font-lg);
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transición suave */
+}
+
+.nav__link:hover {
+  color: var(--color-brand-button); 
+}
+
+.second-nav__link {
+  color: var(--color-brand-button); /* Color inicial */
+  font-size: var(--size-font-lg);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.second-nav__link:hover {
+  color: var(--color-text-primary) 
+}
+/* ----HERO---- */ 
+  .hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-block: var(--spacing-2xl);
+    background-image: url("/assets/img/coffee.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero_content{
+    max-width: 400px;
+  }
+
+  .hero_title{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto var(--spacing-3xl);
+    display: block;
+  }
+
+  .hero_title text{
+    font-size: 55px;
+    font-family: var(--font-h1-hero);
+    letter-spacing: var(--size-font-sm);
+    fill: var(--color-text-primay); /*color del texto*/
+    stroke: var(--webkit-text-stroke); /*contorno del texto*/
+    stroke-width: 2px; /*grosor del contorno*/
+  }
+  .hero_subtitle {
+    font-family: var(--font-h1-hero); /* o una serif elegante */
+    font-size: var(--size-font-lg);
+    font-weight: 600;              /* más fino */
+    letter-spacing: 0.1rem;       /* más aire entre letras */
+    color: #735A4B;   
+    -webkit-text-stroke: 1px #989898; /* tono café suave */
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  /*0px de desplazamiento horizontal → no se mueve a los lados.
+    2px de desplazamiento vertical → da un toque de profundidad.
+    6px de blur → suavidad, sin bordes duros.
+    rgba(0,0,0,0.15) → sombra cálida, muy ligera, no negra.*/
+/* ----FOOTER---- */ 
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* separa izquierda y derecha */
+    align-items: center;            /* centra verticalmente */
+    padding: var(--spacing-lg) var(--spacing-xl);
+    gap: 0.5rem;
+    background: var(--color-brand-border);
+    color: white;
+  }
+  
+  .footer nav a {
+    color: inherit;
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+
+  .footer nav a:hover{
+    color: var(--color-brand);
+  }
+
+    /* ----FORM---- */ 
+
+  .button-sign-in{
+    display: none;
+  }
+
+    .modal{
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-form_title{
+    font-family: var(--font-h1-hero);
+    font-size: var(--size-font-lg);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+/* Caja del modal */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: rgba(224, 198, 161, 0.9);
+    padding: var(--spacing-2xl);
+    border-radius: 10px;
+    width: 320px;
+    position: relative;
+  }
+  
+  /* Botón cerrar */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+   /* ----SERVICES---- */
+/* Sección General */
+#services {
+    background-color: var(--color-text-secondary);
+    padding: var(--spacing-md) var(--spacing-md);
+    color: var(--color-text-primary);
+}
+.p-border-page:last-of-type {
+    margin-bottom: 0; /* Eliminamos el margen que viene de serie */
+}
+/* Título superior centrado */
+.p-border-page {
+    display: flex;
+    align-items: center;    /* Centra verticalmente las líneas con el texto */
+    text-align: center;
+    width: 100%;
+    
+    /* Espaciado del marco respecto a los bordes de la pantalla y el contenido de abajo */
+    padding: 0 var(--spacing-md); 
+    margin-top: 0;          /* Pegado arriba del todo */
+    margin-bottom: var(--spacing-xl);
+    
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.p-border-page::before,
+.p-border-page::after {
+    content: "";
+    flex: 1;                /* Esto hace que las líneas ocupen todo el espacio disponible */
+    height: 2px;            /* Grosor de la línea */
+    background-color: var(--color-text-primary); /* Mismo color que el texto */
+}
+
+
+/* Espacio entre las líneas y el texto */
+.p-border-page::before {
+    margin-right: var(--spacing-sm);
+}
+
+.p-border-page::after {
+    margin-left: var(--spacing-sm);
+}
+
+/* Intro de la sección */
+.services-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.h2-services {
+    font-size: var(--size-font-2xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Tarjetas de Servicio (Mobile First: una columna) */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra H3, IMG y P */
+    text-align: center;     /* Centra el texto */
+    gap: var(--spacing-md);
+    margin-bottom: clamp(2rem, 8vh, 5rem); /* Espacio fluido entre cards */
+    width: 100%;
+}
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra las cards horizontalmente */
+    width: 100%;
+    max-width: 1000px;   /* Evita que el contenido se estire demasiado en monitores Pro */
+    margin: 0 auto;
+}
+
+.h3-services {
+    font-size: var(--size-font-lg);
+    font-family: var(--font-header);
+}
+
+.service-img {
+    /* El ancho crece con la pantalla: mín 280px, preferido 60%, máx 800px */
+    width: clamp(280px, 70%, 800px); 
+    
+    /* La altura también es fluida para mantener la proporción */
+    height: clamp(200px, 40vh, 500px); 
+    
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Opcional: da profundidad en desktop */
+    transition: transform 0.3s ease;
+}
+/* El párrafo del servicio */
+.service-card p {
+    /* Limitamos el ancho del párrafo para que sea fácil de leer en desktop */
+    max-width: 650px; 
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.1vw, 1.2rem); /* Texto ligeramente escalable */
+}
+
+
+/* ---- MENU SECTION ---- */
+.menu-section {
+  background-color: var(--color-brand-border) ; /* Tono crema suave */
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+
+.menu-title {
+  font-size: 2.5em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-header);
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 0 var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: var(--color-text-secondary) ;
+  border-radius: 15px;
+  border: 1px solid var(--color-text-primary);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+}
+
+.img-container-menu img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.menu-info h3 {
+  color: #4a3316;
+  margin-bottom: 10px;
+}
+
+.menu-info p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #666;
+}
+
+.price {
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--color-brand);
+  font-size: 1.1em;
+}
+
+/* ---- FOOD SECTION ---- */
+.food-section {
+  background-color: var(--color-brand-border); /* Un fondo blanco para diferenciarlo del beige del café */
+  padding: var(--spacing-xl) 0;
+}
+
+.h2-food {
+  text-align: center;
+  font-size: 2.2em;
+  color: #4a3316;
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-header);
+}
+
+.menu-food-container {
+  display: grid;
+  /* Creamos 4 columnas en pantallas grandes, 2 en tablets y 1 en móvil */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Reutilizamos los estilos de menu-item para mantener la coherencia */
+.menu-food-container .menu-item {
+  background-color: var(--color-text-secondary);
+  border: 1px solid var(--color-text-primary);
+  text-align: center;
+}
+
+.menu-food-container .img-container-menu img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.menu-food-container .menu-item:hover img {
+  transform: rotate(5deg) scale(1.05); /* Un giro sutil al pasar el ratón */
+}
+
+/*----TEAM-CARDS----*/
+#equipo {
+  background-color: bisque;
+  /* Añadimos padding para que las cards no toquen los bordes */
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.somos {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.cards_team {
+  display: grid;
+  
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 1200px; /* Para que no se estiren demasiado en pantallas gigantes */
+  margin: 0 auto;    /* Centra el bloque entero */
+}
+
+/* Estilo común para todas las cards */
+.cards_team > div {
+  /* Eliminamos el width fijo de 280px para que el grid gestione el tamaño */
+  width: 100%; 
+  max-width: 320px; /* Un poco más de margen para que luzcan mejor */
+  padding: 20px;
+  border: 1px solid #633800;
+  border-radius: 12px;
+  margin: 0 auto; /* Centra la card dentro de su celda de grid */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido de la card */
+  box-sizing: border-box;
+}
+
+.name {
+  margin: 10px 0 5px 0;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.position {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 0.85em; /* Corregida la coma por punto */
+  width: 100%; /* Para que la lista se alinee bien */
+}
+
+.contact-list li {
+  margin-bottom: 5px;
+  word-break: break-all; /* Evita que correos largos rompan la card */
+}
+
+/* Unificamos iconos para evitar desajustes visuales */
+.icon, .icon_two {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  display: block;
+  border-radius: 50%; /* Opcional: círculos para que parezca más profesional */
+  border: 2px solid #633800;
+}
+
+/* Colores de fondo */
+.card_pau { background-color: rgb(220, 188, 150); }
+.card_kar { background-color: var(--color-brand-border); }
+.card_rub { background-color: var(--color-brand); }
+.card_cyn { background-color: #a96239; }
+
+    

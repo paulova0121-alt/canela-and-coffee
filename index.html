@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canela&Coffee</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+    <header class="header">
+        <nav class="nav">
+          <div class="logo">
+            <a class="nav__logo" href="#">Canela&Coffee</a>
+          </div>
+  
+          <button class="nav__toggle" aria-label="Abrir menú">☰</button>
+
+          <div class="nav__menu">
+            <a class="nav__link" href="#" id="openModalFromMenu">Iniciar Sesión</a>
+            <a class="nav__link" href="#">Nuestro C&C</a>
+            <a class="second-nav__link" href="#">Contacto</a>
+            <a class="second-nav__link" href="#">Colaboradores</a>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero_content">
+      
+          <svg class="hero_title" viewBox="0 0 500 200">
+             <!-- PATH = la curva que define el arco del texto.
+              M 50 200  → punto inicial (x=50, y=200)
+              Q 250 -120 → punto de control (cuanto más arriba, más curvado)
+              450 200 → punto final (x=450, y=200)
+              fill="transparent" → no pinta nada, solo sirve de guía para el texto-->
+            <!-- Curva del arco -->
+            <path id="curve" d="M 50 200 Q 250 -120 450 200" fill="transparent"/>
+            <!--TEXT = contenedor del texto dentro del SVG.
+            width="500" → ancho del área donde se distribuye el texto-->
+            <text width="500">
+                <!-- TEXTPATH = hace que el texto siga la curva del <path>
+                href="#curve" → enlaza con el path de arriba.
+                startOffset="50%" → centra el texto en la curva.
+                text-anchor="middle" → alinea el texto respecto al centro.-->
+              <textPath href="#curve" startOffset="50%" text-anchor="middle">
+                Canela&Coffee
+              </textPath>
+            </text>
+          </svg>
+      
+          <h2 class="hero_subtitle">Un sorbo de felicidad</h2>
+        </div>
+      </section>
+      
+      
+  <section id="services">
+    <p class="p-border-page">Servicios</p>
+    
+    <div class="services-container">
+        <header class="services-intro">
+            <h2 class="h2-services">¿Qué hacemos?</h2>
+            <p>
+                Desde Suecia, te traemos el mejor grano de café para que lo disfrutes
+                con nosotros, en cualquier momento de tu día.
+            </p>
+        </header>
+        <article class="service-card">
+            <h3 class="h3-services">Nuestro toque personal.</h3>
+            <img src="assets/img/Foto C&C café con canela.jpg" alt="Café con canela" class="service-img">
+            <p>
+                Fusionamos la intensidad del café nórdico con la calidez de la canela
+                natural. Nuestro blend exclusivo crea un equilibrio perfecto entre aroma, 
+                cuerpo y dulzura.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3 class="h3-services">Experiencia Canela&Coffee</h3>
+            <img src="assets/img/C&C bar.png" alt="Establecimiento de C&C" class="service-img">
+            <p>
+                Creamos espacios acogedores para que cada visita sea tu pausa perfecta
+                del día, un momento de desconexión y bienestar.
+            </p>
+        </article>
+
+        <article class="service-card">
+            <h3 class="h3-services">Eventos y suscripciones</h3>
+            <img src="assets/img/Foto C&C eventos.jpg" alt="Personas reunidas con café" class="service-img">
+            <p>
+                Llevamos nuestro café a eventos, oficinas y celebraciones especiales,
+                recién tostado y listo para preparar.
+            </p>
+        </article>
+    </div>
+    <p class="p-border-page">C&C</p>
+    </section>
+
+    <section class="menu-section">
+  <p class="p-border-page">Menu</p>
+  <h2 class="menu-title">Our drinks</h2>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Espresso.png" alt="Café Espresso">
+      </div>
+      <div class="menu-info">
+        <h3>Espresso</h3>
+        <p>Auténtico café italiano. Intenso, fuerte y aromático, con un sabor rico y un final suave.</p>
+        <p class="price">Price: 2.00€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Flat White.png" alt="Café Flat White">
+      </div>
+      <div class="menu-info">
+        <h3>Flat White</h3>
+        <p>Espresso suave perfectamente mezclado con leche vaporizada sedosa para un sabor equilibrado.</p>
+        <p class="price">Price: 3.00€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Ice Coffee.png" alt="Café Ice Coffee">
+      </div>
+      <div class="menu-info">
+        <h3>Ice Coffee</h3>
+        <p>Café refrescante y energizante. Suave, frío y con cuerpo para despertar tus sentidos.</p>
+        <p class="price">Price: 2.25€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/C&C.png" alt="Café&Cinammon">
+      </div>
+      <div class="menu-info">
+        <h3>C&C</h3>
+        <p>Rico espresso infusionado con canela aromática y terminado con leche cremosa.</p>
+        <p class="price">Price: 3.50€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Capuccino.png" alt="Café Capuccino">
+      </div>
+      <div class="menu-info">
+        <h3>Capuccino</h3>
+        <p>Intenso, suave y cálido, coronado con cremosa y aterciopelada espuma de leche.</p>
+        <p class="price">Price: 4.00€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Mocha.png" alt="Café Mocha">
+      </div>
+      <div class="menu-info">
+        <h3>Mocha</h3>
+        <p>Intenso espresso mezclado con chocolate y leche cremosa para una experiencia dulce.</p>
+        <p class="price">Price: 5.00€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Macchiato.png" alt="Café Macchiato">
+      </div>
+      <div class="menu-info">
+        <h3>Macchiato</h3>
+        <p>Rico espresso marcado con un toque de leche cremosa para un final intenso.</p>
+        <p class="price">Price: 4.00€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Chocolatte.png" alt="Chocolatte">
+      </div>
+      <div class="menu-info">
+        <h3>Chocolatte</h3>
+        <p>Suave chocolate, rico espresso y leche caliente combinados en una delicia cremosa.</p>
+        <p class="price">Price: 6.00€</p>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<section class="food-section">
+  <h2 class="h2-food">Date el gusto.</h2>
+
+  <div class="menu-food-container">
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Croissant.png" alt="Croissant artesanal">
+      </div>
+      <div class="menu-info">
+        <h3>Croissant</h3>
+        <p>Croissant mantecoso y hojaldrado. Ligero, dorado y crujiente, perfecto para acompañar tu café favorito.</p>
+        <p class="price">Price: 3.5 euros/€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Cinammon Roll.png" alt="Cinnamon Roll">
+      </div>
+      <div class="menu-info">
+        <h3>Cinnamon Roll</h3>
+        <p>Nuestro famoso rollo de canela sueco. Masa tierna, especias aromáticas y un glaseado suave que se deshace en la boca.</p>
+        <p class="price">Price: 4.5 euros/€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Choco Cookie.png" alt="Cookie de chocolate">
+      </div>
+      <div class="menu-info">
+        <h3>Cookie C&C</h3>
+        <p>Galleta artesana con pepitas de chocolate negro y un toque de sal marina. Crujiente por fuera y tierna por dentro.</p>
+        <p class="price">Price: 2.8 euros/€</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="img-container-menu">
+        <img src="assets/img/Sandwich.png" alt="Sandwich">
+      </div>
+      <div class="menu-info">
+        <h3></h3>
+        <p>Pan tostado artesanal con ingredientes sabrosos. La opción salada perfecta para tu mañana.</p>
+        <p class="price">Price: 5.5 euros/€</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="p-border-page">C&C</p>
+</section>
+
+<section id="equipo">
+      <h2 class="somos">Quiénes somos</h2>
+
+      <div class="cards_team">
+        <div class="card_pau">
+          <img
+            src="assets/img/icon_1.png"
+            alt="Paula Gallego - Marketing"
+            class="icon"
+          />
+          <h3 class="name">Paula Gallego</h3>
+          <p class="position">Encargada de marketing</p>
+          <ul class="contact-list">
+            <li>📞 678351897</li>
+            <li>✉️ patatacosmica@gmail.com</li>
+            <li>🔗 linkedin.com/in/potatose-blackcat-ba0708239</li>
+          </ul>
+        </div>
+
+        <div class="card_kar">
+          <img
+            src="assets/img/icon_2.png"
+            alt="Karina Reyes - Servicio"
+            class="icon"
+          />
+          <h3 class="name">Karina Reyes</h3>
+          <p class="position">Encargada de servicio</p>
+          <ul class="contact-list">
+            <li>📞 973301294</li>
+            <li>✉️ cosmiccoffe@gmail.com</li>
+            <li>🔗 linkedin.com/in/coffe-lunch-ba0708239</li>
+          </ul>
+        </div>
+
+        <div class="card_rub">
+          <img
+            src="assets/img/icon_3.png"
+            alt="Rubén Campal - Comercial"
+            class="icon"
+          />
+          <h3 class="name">Rubén Campal</h3>
+          <p class="position">Encargado comercial</p>
+          <ul class="contact-list">
+            <li>📞 714296407</li>
+            <li>✉️ filetede_pollo@gmail.com</li>
+            <li>🔗 linkedin.com/in/chick-cock-ba0708239</li>
+          </ul>
+        </div>
+
+        <div class="card_cyn">
+          <img
+            src="assets/img/icon_4.png"
+            alt="Cyntia - Encargada de equipo"
+            class="icon_two"
+          />
+          <h3 class="name">Cyntia Zebaze</h3>
+          <p class="position">Encargada de equipo</p>
+          <ul class="contact-list">
+            <li>📞 945702991</li>
+            <li>✉️ pancake21@gmail.com</li>
+            <li>🔗 linkedin.com/in/chocolate-milk-ba070239</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <p class="copyright">© 2025 Canela & Coffee</p>
+      <nav class="nav_footer">
+        <a href="#servicios">Servicios</a>
+        <a href="#login">Acceso</a>
+      </nav>
+    </footer>
+
+    <!-- Botón para abrir la ventana -->
+    <button class="button-sign-in" id="openModal">Iniciar sesión</button>  
+
+<!-- Ventana emergente -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+
+    <span class="close">&times;</span>
+
+    <h2 class="modal-form_title">Acceso</h2>
+
+    <form action="#" method="post">
+
+      <div>
+        <label for="nombre">Nombre:</label><br>
+        <input 
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Introduce tu nombre"
+          required
+        >
+      </div>
+
+      <br>
+
+      <div>
+        <label for="password">Contraseña:</label><br>
+        <input 
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Introduce tu contraseña"
+          required
+        >
+      </div>
+
+      <br>
+
+      <button type="submit">Iniciar sesión</button>
+
+    </form>
+
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
