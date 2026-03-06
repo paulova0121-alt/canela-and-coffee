@@ -112,76 +112,83 @@ body::before {
     z-index: -1;        /* Capa inferior para no solapar a nadie */
 }
 
-  /* ----HEADER---- */ 
+  /* ----HEADER---- */
+.header {
+  position: fixed;
+  top: 0; /* Cambiado de margin-top a top para position: fixed */
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff; /* Asegúrate de tener un fondo para que no sea transparente */
+}
 
-  .header {
-    position: fixed;
-    margin-top: 0;
-    margin-left: 0;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: var(--spacing-sm);
-  }
-  
-  .nav__logo {
-    height: 40px;
-    text-decoration: none;
-    color: var(--color-brand);
-    -webkit-text-stroke: 1px var(--webkit-text-stroke);
-    font-weight: 800;
-    font-size: var(--spacing-md);
-  }
-  
-  .nav__toggle {
-    background: none;
-    border: none;
-    font-size: var(--size-font-3xl);
-    cursor: pointer;
-    color: var(--color-brand-border);
-    margin: 1px;
-    background-color: #e0c6a1;
-    border-radius: 3px;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--spacing-sm);
+  height: 60px; /* Altura recomendada para consistencia */
+}
+
+.nav__logo {
+  text-decoration: none;
+  color: var(--color-brand);
+  -webkit-text-stroke: 1px var(--webkit-text-stroke);
+  font-weight: 800;
+  font-size: var(--spacing-md);
+}
+
+.nav__toggle {
+  background-color: #e0c6a1;
+  border: none;
+  font-size: var(--size-font-3xl);
+  cursor: pointer;
+  color: var(--color-brand-border);
+  border-radius: 3px;
+  padding: 5px 10px;
 }
 
 .nav__menu {
-    display: none;
-    flex-direction: column;
-    background: var(--color-brand-border);
-    position: absolute;
-    top: 100%;
-    right: 1rem;
-    padding: 1rem 1.5rem;
-    gap: 0.75rem;
-    border: solid 2px var(--color-brand-border);
-    border-radius: 8px;
-  }
-  
-  .nav__menu--show {
-    display: flex;
-  }
-  
-  .nav__link {
-    color: var(--color-text-primary);
-    font-size: var(--size-font-lg);
-    text-decoration: none;
-  }
-  
-  .second-nav__link {
-    color: var(--color-brand-button);
-    font-size: var(--size-font-lg);
-    text-decoration: none;
-  }
-  
-  .nav__link:hover,
-  .second-nav__link:hover {
-    color: var(--color-brand);
-  }
+  display: none;
+  flex-direction: column;
+  background: var(--color-brand-border); /* Color oscuro de fondo */
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  padding: 1rem 1.5rem;
+  gap: 0.75rem;
+  border: solid 2px var(--color-brand-border);
+  border-radius: 8px;
+}
+
+.nav__menu--show {
+  display: flex;
+}
+
+/* --- ESTILOS DE ENLACES Y HOVERS --- */
+
+/* 1. Enlaces "Claros" (Generalmente fuera del menú o con texto oscuro) */
+.nav__link {
+  color: var(--color-text-primary);
+  font-size: var(--size-font-lg);
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transición suave */
+}
+
+.nav__link:hover {
+  color: var(--color-brand-button); 
+}
+
+.second-nav__link {
+  color: var(--color-brand-button); /* Color inicial */
+  font-size: var(--size-font-lg);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.second-nav__link:hover {
+  color: var(--color-text-primary) 
+}
 /* ----HERO---- */ 
   .hero{
     display: flex;
@@ -228,154 +235,6 @@ body::before {
     2px de desplazamiento vertical → da un toque de profundidad.
     6px de blur → suavidad, sin bordes duros.
     rgba(0,0,0,0.15) → sombra cálida, muy ligera, no negra.*/
-
-   /* ----SERVICES---- */
-/* Sección General */
-#services {
-    background-color: var(--color-text-secondary);
-    padding: var(--spacing-md) var(--spacing-md);
-    color: var(--color-text-primary);
-}
-.p-border-page:last-of-type {
-    margin-bottom: 0; /* Eliminamos el margen que viene de serie */
-}
-/* Título superior centrado */
-.p-border-page {
-    display: flex;
-    align-items: center;    /* Centra verticalmente las líneas con el texto */
-    text-align: center;
-    width: 100%;
-    
-    /* Espaciado del marco respecto a los bordes de la pantalla y el contenido de abajo */
-    padding: 0 var(--spacing-md); 
-    margin-top: 0;          /* Pegado arriba del todo */
-    margin-bottom: var(--spacing-xl);
-    
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.p-border-page::before,
-.p-border-page::after {
-    content: "";
-    flex: 1;                /* Esto hace que las líneas ocupen todo el espacio disponible */
-    height: 2px;            /* Grosor de la línea */
-    background-color: var(--color-text-primary); /* Mismo color que el texto */
-}
-
-
-/* Espacio entre las líneas y el texto */
-.p-border-page::before {
-    margin-right: var(--spacing-sm);
-}
-
-.p-border-page::after {
-    margin-left: var(--spacing-sm);
-}
-
-/* Intro de la sección */
-.services-intro {
-    text-align: center;
-    margin-bottom: var(--spacing-2xl);
-}
-
-.h2-services {
-    font-size: var(--size-font-2xl);
-    margin-bottom: var(--spacing-xs);
-}
-
-/* Tarjetas de Servicio (Mobile First: una columna) */
-.service-card {
-    display: flex;
-    flex-direction: column; /* H3 -> IMG -> P */
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-2xl);
-}
-
-.h3-services {
-    font-size: var(--size-font-lg);
-    font-family: var(--font-header);
-}
-
-.service-img {
-    width: 100%;
-    height: auto;
-    max-height: 300px; /* Para que no ocupen toda la pantalla en alto */
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* El párrafo del servicio */
-.service-card p {
-    line-height: 1.5;
-}
-
-/*----TEAM-CARDS----*/
-.cards_team {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: bisque;
-  border-radius: 12px;
-  margin-left: 3%;
-  margin-right: 3%;
-  font-size: 0, 9em;
-  line-height: 1.4;
-  height: 400px;
-}
-.somos {
-  font-size: 1.5em;
-  text-align: center;
-}
-.name {
-  margin: 0 0 1px 0;
-  font-size: 1.3em;
-}
-.info {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  font-size: 0, 85em;
-}
-
-.icon {
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  margin: 0 auto 15px auto;
-  display: block;
-}
-.icon_two {
-  height: 190px;
-  object-fit: cover;
-  display: block;
-  margin-left: -80px;
-  margin-top: -30px;
-}
-.cards_team div {
-  width: 280px;
-  max-width: 100%;
-  padding: 10px;
-  border: 1px solid #633800;
-  border-radius: 12px;
-  list-style-position: inside;
-}
-.card_pau {
-  background-color: rgb(220, 188, 150);
-}
-.card_kar {
-  background-color: var(--color-brand-border);
-}
-.card_rub {
-  background-color: var(--color-brand);
-}
-.card_cyn {
-  background-color: #a96239;
-}
-
 /* ----FOOTER---- */ 
   .footer {
     display: flex;
@@ -443,4 +302,293 @@ body::before {
     font-size: 1.5rem;
     cursor: pointer;
   }
+   /* ----SERVICES---- */
+/* Sección General */
+#services {
+    background-color: var(--color-text-secondary);
+    padding: var(--spacing-md) var(--spacing-md);
+    color: var(--color-text-primary);
+}
+.p-border-page:last-of-type {
+    margin-bottom: 0; /* Eliminamos el margen que viene de serie */
+}
+/* Título superior centrado */
+.p-border-page {
+    display: flex;
+    align-items: center;    /* Centra verticalmente las líneas con el texto */
+    text-align: center;
+    width: 100%;
+    
+    /* Espaciado del marco respecto a los bordes de la pantalla y el contenido de abajo */
+    padding: 0 var(--spacing-md); 
+    margin-top: 0;          /* Pegado arriba del todo */
+    margin-bottom: var(--spacing-xl);
+    
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.p-border-page::before,
+.p-border-page::after {
+    content: "";
+    flex: 1;                /* Esto hace que las líneas ocupen todo el espacio disponible */
+    height: 2px;            /* Grosor de la línea */
+    background-color: var(--color-text-primary); /* Mismo color que el texto */
+}
+
+
+/* Espacio entre las líneas y el texto */
+.p-border-page::before {
+    margin-right: var(--spacing-sm);
+}
+
+.p-border-page::after {
+    margin-left: var(--spacing-sm);
+}
+
+/* Intro de la sección */
+.services-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.h2-services {
+    font-size: var(--size-font-2xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Tarjetas de Servicio (Mobile First: una columna) */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra H3, IMG y P */
+    text-align: center;     /* Centra el texto */
+    gap: var(--spacing-md);
+    margin-bottom: clamp(2rem, 8vh, 5rem); /* Espacio fluido entre cards */
+    width: 100%;
+}
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra las cards horizontalmente */
+    width: 100%;
+    max-width: 1000px;   /* Evita que el contenido se estire demasiado en monitores Pro */
+    margin: 0 auto;
+}
+
+.h3-services {
+    font-size: var(--size-font-lg);
+    font-family: var(--font-header);
+}
+
+.service-img {
+    /* El ancho crece con la pantalla: mín 280px, preferido 60%, máx 800px */
+    width: clamp(280px, 70%, 800px); 
+    
+    /* La altura también es fluida para mantener la proporción */
+    height: clamp(200px, 40vh, 500px); 
+    
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Opcional: da profundidad en desktop */
+    transition: transform 0.3s ease;
+}
+/* El párrafo del servicio */
+.service-card p {
+    /* Limitamos el ancho del párrafo para que sea fácil de leer en desktop */
+    max-width: 650px; 
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.1vw, 1.2rem); /* Texto ligeramente escalable */
+}
+
+
+/* ---- MENU SECTION ---- */
+.menu-section {
+  background-color: var(--color-brand-border) ; /* Tono crema suave */
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+
+.menu-title {
+  font-size: 2.5em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-header);
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 0 var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: var(--color-text-secondary) ;
+  border-radius: 15px;
+  border: 1px solid var(--color-text-primary);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+}
+
+.img-container-menu img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.menu-info h3 {
+  color: #4a3316;
+  margin-bottom: 10px;
+}
+
+.menu-info p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #666;
+}
+
+.price {
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--color-brand);
+  font-size: 1.1em;
+}
+
+/* ---- FOOD SECTION ---- */
+.food-section {
+  background-color: var(--color-brand-border); /* Un fondo blanco para diferenciarlo del beige del café */
+  padding: var(--spacing-xl) 0;
+}
+
+.h2-food {
+  text-align: center;
+  font-size: 2.2em;
+  color: #4a3316;
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-header);
+}
+
+.menu-food-container {
+  display: grid;
+  /* Creamos 4 columnas en pantallas grandes, 2 en tablets y 1 en móvil */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Reutilizamos los estilos de menu-item para mantener la coherencia */
+.menu-food-container .menu-item {
+  background-color: var(--color-text-secondary);
+  border: 1px solid var(--color-text-primary);
+  text-align: center;
+}
+
+.menu-food-container .img-container-menu img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.menu-food-container .menu-item:hover img {
+  transform: rotate(5deg) scale(1.05); /* Un giro sutil al pasar el ratón */
+}
+
+/*----TEAM-CARDS----*/
+#equipo {
+  background-color: bisque;
+  /* Añadimos padding para que las cards no toquen los bordes */
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.somos {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.cards_team {
+  display: grid;
+  
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 1200px; /* Para que no se estiren demasiado en pantallas gigantes */
+  margin: 0 auto;    /* Centra el bloque entero */
+}
+
+/* Estilo común para todas las cards */
+.cards_team > div {
+  /* Eliminamos el width fijo de 280px para que el grid gestione el tamaño */
+  width: 100%; 
+  max-width: 320px; /* Un poco más de margen para que luzcan mejor */
+  padding: 20px;
+  border: 1px solid #633800;
+  border-radius: 12px;
+  margin: 0 auto; /* Centra la card dentro de su celda de grid */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido de la card */
+  box-sizing: border-box;
+}
+
+.name {
+  margin: 10px 0 5px 0;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.position {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 0.85em; /* Corregida la coma por punto */
+  width: 100%; /* Para que la lista se alinee bien */
+}
+
+.contact-list li {
+  margin-bottom: 5px;
+  word-break: break-all; /* Evita que correos largos rompan la card */
+}
+
+/* Unificamos iconos para evitar desajustes visuales */
+.icon, .icon_two {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  display: block;
+  border-radius: 50%; /* Opcional: círculos para que parezca más profesional */
+  border: 2px solid #633800;
+}
+
+/* Colores de fondo */
+.card_pau { background-color: rgb(220, 188, 150); }
+.card_kar { background-color: var(--color-brand-border); }
+.card_rub { background-color: var(--color-brand); }
+.card_cyn { background-color: #a96239; }
+
     
